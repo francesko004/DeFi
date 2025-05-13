@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background: linear-gradient(135deg, #e0e7ff 0%, #c3cfe2 100%);
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -33,7 +33,7 @@ body.dark {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s ease;
 }
 
 body.dark .loader {
@@ -63,59 +63,44 @@ body.dark .loader {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 /* Header */
 header {
     background: linear-gradient(90deg, #6a11cb, #2575fc);
-    padding: 40px 0;
+    padding: 30px 0;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-header::before {
-    content: '';
-    position: absolute;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('header-bg.jpg') center/cover;
-    opacity: 0.2;
-    z-index: 0;
-    transform: translateY(0);
-    transition: transform 0.5s;
-}
-
-header.scrolled::before {
-    transform: translateY(-20px); /* Parallax effect */
+    z-index: 100;
+    background-size: cover;
+    background-attachment: fixed; /* Simplified parallax */
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Optimized for projectors */
     color: #fff;
-    position: relative;
-    z-index: 1;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #theme-toggle {
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     border: none;
     padding: 10px;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #fff;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 #theme-toggle:hover {
     transform: rotate(180deg);
+    background: rgba(255, 255, 255, 0.5);
 }
 
 body.dark #theme-toggle i::before {
@@ -126,14 +111,15 @@ body.dark #theme-toggle i::before {
 nav {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 99;
 }
 
 body.dark nav {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 nav ul {
@@ -141,21 +127,25 @@ nav ul {
     justify-content: center;
     list-style: none;
     flex-wrap: wrap;
+    padding: 10px 0;
 }
 
 nav ul li {
-    margin: 10px 20px;
+    margin: 8px 15px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
     color: #ffd700;
 }
 
@@ -167,21 +157,22 @@ nav ul li a:hover {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 101;
-    transition: width 0.3s;
+    z-index: 100;
+    transition: width 0.3s ease;
 }
 
 /* Sections */
 section {
-    padding: 60px 0;
+    padding: 50px 0;
+    min-height: 100vh; /* Ensure sections are visible on scroll */
 }
 
 section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
     text-align: center;
     color: #6a11cb;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 body.dark section h2 {
@@ -189,8 +180,11 @@ body.dark section h2 {
 }
 
 section p, section ul {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 section ul {
@@ -201,12 +195,13 @@ section ul {
 section ul li {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 section ul li i {
     margin-right: 10px;
     color: #6a11cb;
+    font-size: 1.2rem;
 }
 
 body.dark section ul li i {
@@ -217,8 +212,9 @@ body.dark section ul li i {
 .hero-image {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
-    margin: 20px 0;
+    border-radius: 15px;
+    margin: 20px auto;
+    display: block;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -227,36 +223,44 @@ body.dark section ul li i {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding: 20px 0;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 body.dark .card {
     background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .card-image {
-    max-width: 100px;
+    max-width: 80px;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 10px;
+    color: #6a11cb;
+}
+
+body.dark .card h3 {
+    color: #2575fc;
 }
 
 /* Carousel */
@@ -265,6 +269,7 @@ body.dark .card {
     max-width: 600px;
     margin: 0 auto;
     overflow: hidden;
+    border-radius: 15px;
 }
 
 .carousel-inner {
@@ -276,7 +281,7 @@ body.dark .card {
     min-width: 100%;
     text-align: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border-radius: 15px;
 }
@@ -286,9 +291,9 @@ body.dark .carousel-item {
 }
 
 .carousel-image {
-    max-width: 150px;
+    max-width: 120px;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .carousel-prev, .carousel-next {
@@ -298,10 +303,10 @@ body.dark .carousel-item {
     background: rgba(0, 0, 0, 0.5);
     border: none;
     color: #fff;
-    padding: 10px;
+    padding: 10px 15px;
     cursor: pointer;
     border-radius: 50%;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
 .carousel-prev:hover, .carousel-next:hover {
@@ -319,19 +324,23 @@ body.dark .carousel-item {
 /* FAQ Section */
 .faq-item {
     margin-bottom: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .faq-question {
     width: 100%;
-    padding: 15px;
+    padding: 15px 20px;
     background: #6a11cb;
     color: #fff;
     border: none;
     border-radius: 10px;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 body.dark .faq-question {
@@ -350,8 +359,8 @@ body.dark .faq-question:hover {
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    padding: 0 15px;
-    background: rgba(255, 255, 255, 0.2);
+    padding: 0 20px;
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     transition: max-height 0.5s ease, padding 0.5s ease;
@@ -363,22 +372,23 @@ body.dark .faq-answer {
 
 .faq-answer.active {
     max-height: 200px;
-    padding: 15px;
+    padding: 15px 20px;
 }
 
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     background: #6a11cb;
     color: #fff;
     border: none;
-    padding: 15px;
+    padding: 12px;
     border-radius: 50%;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 101;
 }
 
 body.dark #back-to-top {
@@ -395,19 +405,31 @@ body.dark #back-to-top {
 
 /* Footer */
 footer {
-    background: #1e1e2f;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
     color: #fff;
     text-align: center;
-    padding: 40px 0;
+    padding: 30px 0;
 }
 
 footer a {
-    color: #2575fc;
+    color: #ffd700;
     text-decoration: none;
+    font-weight: 600;
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Fallback for Backdrop Filter */
+@supports not (backdrop-filter: blur(10px)) {
+    .card, .carousel-item, .faq-answer, nav {
+        background: rgba(255, 255, 255, 0.3); /* Fallback for light theme */
+    }
+
+    body.dark .card, body.dark .carousel-item, body.dark .faq-answer, body.dark nav {
+        background: rgba(0, 0, 0, 0.5); /* Fallback for dark theme */
+    }
 }
 
 /* Responsive Design */
@@ -421,11 +443,37 @@ footer a:hover {
         align-items: center;
     }
 
+    nav ul li {
+        margin: 5px 0;
+    }
+
     section h2 {
         font-size: 1.8rem;
     }
 
+    section p, section ul {
+        font-size: 1rem;
+    }
+
     .carousel {
         max-width: 100%;
+    }
+
+    .card-image, .carousel-image {
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .card, .carousel-item {
+        padding: 15px;
     }
 }
