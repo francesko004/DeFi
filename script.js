@@ -1,6 +1,3 @@
-// Initialize AOS
-AOS.init({ duration: 800, once: true });
-
 // Loader
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
@@ -80,12 +77,21 @@ backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Parallax Effect for Header
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
+// Particles.js Initialization
+particlesJS('particles', {
+    particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#3ad8ff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: '#8a4af3', opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2, direction: 'none', random: false }
+    },
+    interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true },
+        modes: { grab: { distance: 200, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
+    },
+    retina_detect: true
 });
