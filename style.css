@@ -10,13 +10,12 @@ body {
     line-height: 1.6;
     color: #fff;
     background: linear-gradient(135deg, #1a0933 0%, #2b1e66 100%);
-    transition: background 0.3s ease;
     scroll-behavior: smooth;
     overflow-x: hidden;
     position: relative;
 }
 
-/* Dark Theme (Optional Toggle) */
+/* Dark Theme */
 body.dark {
     background: linear-gradient(135deg, #0d071a 0%, #1a1452 100%);
 }
@@ -87,7 +86,6 @@ header {
 header h1 {
     font-size: 3rem;
     font-weight: 700;
-    color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
     animation: fadeInDown 1s ease;
@@ -120,7 +118,6 @@ body.dark #theme-toggle i::before {
 nav {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
@@ -238,7 +235,6 @@ section ul li i {
 .card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     padding: 25px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -408,8 +404,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 40px 0;
-    position: relative;
-    z-index: 10;
 }
 
 footer a {
@@ -422,7 +416,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Custom Animations */
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -442,6 +436,9 @@ footer a:hover {
 @supports not (backdrop-filter: blur(15px)) {
     .card, .carousel-item, .faq-answer, nav {
         background: rgba(255, 255, 255, 0.3);
+    }
+    body.dark .card, body.dark .carousel-item, body.dark .faq-answer, body.dark nav {
+        background: rgba(0, 0, 0, 0.5);
     }
 }
 
