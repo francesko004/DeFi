@@ -6,10 +6,12 @@
     <title>Prezantim për DeFi: Financa e Decentralizuar</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
     <!-- Loader -->
     <div id="loader" class="loader">
         <div class="spinner"></div>
@@ -43,69 +45,69 @@
 
     <!-- Main Content -->
     <main>
-        <section id="hyrje" class="container" data-aos="fade-up">
+        <section id="hyrje" class="container">
             <h2>Mirë se vini në DeFi</h2>
             <img src="hero-defi.jpg" alt="Ilustrim i DeFi" class="hero-image">
-            <p>Financa e Decentralizuar (DeFi) po ndryshon mënyrën se si mendojmë për paratë dhe shërbimet financiare. Ky prezantim shpjegon DeFi për fillestarët.</p>
+            <p>Financa e Decentralizuar (DeFi) po transformon botën e parave dhe shërbimeve financiare. Ky prezantim u ndihmon fillestarëve të kuptojnë DeFi dhe mundësitë e saj.</p>
         </section>
 
-        <section id="cka-eshte-defi" class="container" data-aos="fade-right">
+        <section id="cka-eshte-defi" class="container">
             <h2>Çfarë është DeFi?</h2>
-            <p>DeFi është <strong>Financë e Decentralizuar</strong>, aplikacione financiare në blockchain (kryesisht Ethereum) që funksionojnë pa banka apo ndërmjetës.</p>
+            <p>DeFi (Financë e Decentralizuar) është një sistem aplikacionesh financiare në blockchain, kryesisht Ethereum, që eliminojnë ndërmjetësit si bankat.</p>
             <ul>
-                <li><i class="fas fa-globe"></i> <strong>E decentralizuar</strong>: Pa kontroll qendror.</li>
-                <li><i class="fas fa-door-open"></i> <strong>E hapur</strong>: Për këdo me internet.</li>
+                <li><i class="fas fa-globe"></i> <strong>E Decentralizuar</strong>: Pa kontroll qendror.</li>
+                <li><i class="fas fa-door-open"></i> <strong>E Hapur</strong>: Për këdo me internet.</li>
                 <li><i class="fas fa-eye"></i> <strong>Transparente</strong>: Transaksione publike.</li>
             </ul>
         </section>
 
-        <section id="koncepte-kryesore" class="container" data-aos="fade-left">
+        <section id="koncepte-kryesore" class="container">
             <h2>Koncepte Kryesore në DeFi</h2>
             <div class="grid">
-                <div class="card" data-aos="zoom-in">
+                <div class="card">
                     <img src="smart-contract.png" alt="Kontrata të zgjuara" class="card-image">
                     <h3>Kontrata të Zgjuara</h3>
-                    <p>Kod që ekzekuton automatikisht marrëveshjet.</p>
+                    <p>Kod automatik që zbaton marrëveshjet pa ndërmjetës.</p>
                 </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card">
                     <img src="dex.png" alt="Bursa të decentralizuara" class="card-image">
                     <h3>Bursa të Decentralizuara</h3>
-                    <p>Platforma si Uniswap për tregti direkte.</p>
+                    <p>Platforma si Uniswap për tregti të drejtpërdrejtë.</p>
                 </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card">
                     <img src="lending.png" alt="Huazim" class="card-image">
                     <h3>Protokollet e Huazimit</h3>
                     <p>Huazoni ose jepni kripto pa banka (p.sh., Aave).</p>
                 </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card">
                     <img src="stablecoin.png" alt="Stablecoins" class="card-image">
                     <h3>Stablecoins</h3>
-                    <p>Kriptomonedha të lidhura me USD (p.sh., USDC).</p>
+                    <p>Monedha si USDC të lidhura me vlerë të qëndrueshme.</p>
                 </div>
             </div>
         </section>
 
-        <section id="perfitimet" class="container" data-aos="fade-up">
+        <section id="perfitimet" class="container">
             <h2>Përfitimet e DeFi</h2>
             <ul>
-                <li><i class="fas fa-users"></i> <strong>Arritshmëria</strong>: Për këdo me portofol kripto.</li>
-                <li><i class="fas fa-search"></i> <strong>Transparenca</strong>: Transaksione të dukshme.</li>
+                <li><i class="fas fa-users"></i> <strong>Arritshmëria</strong>: Për të gjithë me portofol kripto.</li>
+                <li><i class="fas fa-search"></i> <strong>Transparenca</strong>: Transaksione të hapura.</li>
                 <li><i class="fas fa-lock"></i> <strong>Kontrolli</strong>: Ju menaxhoni fondet tuaja.</li>
                 <li><i class="fas fa-rocket"></i> <strong>Inovacioni</strong>: Shërbime të reja financiare.</li>
             </ul>
         </section>
 
-        <section id="rreziqet" class="container" data-aos="fade-right">
+        <section id="rreziqet" class="container">
             <h2>Rreziqet e DeFi</h2>
             <ul>
                 <li><i class="fas fa-shield-alt"></i> <strong>Siguria</strong>: Rrezik nga gabimet në kod.</li>
                 <li><i class="fas fa-chart-line"></i> <strong>Paqëndrueshmëria</strong>: Çmimet luhaten.</li>
                 <li><i class="fas fa-gavel"></i> <strong>Rregullimi</strong>: Ligje të pasigurta.</li>
-                <li><i class="fas fa-puzzle-piece"></i> <strong>Kompleksiteti</strong>: Vështirësi për fillestarët.</li>
+                <li><i class="fas fa-puzzle-piece"></i> <strong>Kompleksiteti</strong>: Sfida për fillestarët.</li>
             </ul>
         </section>
 
-        <section id="shembuj" class="container" data-aos="fade-left">
+        <section id="shembuj" class="container">
             <h2>Shembuj të DeFi</h2>
             <div class="carousel">
                 <div class="carousel-inner">
@@ -130,21 +132,21 @@
             </div>
         </section>
 
-        <section id="pyetje" class="container" data-aos="fade-up">
+        <section id="pyetje" class="container">
             <h2>Pyetje të Shpeshta</h2>
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-item">
                 <button class="faq-question">Çfarë më duhet për të filluar me DeFi?</button>
                 <div class="faq-answer">
-                    <p>Ju nevojitet një portofol kripto (p.sh., MetaMask), kriptomonedha (p.sh., ETH), dhe qasje në një platformë DeFi.</p>
+                    <p>Ju nevojitet një portofol kripto (p.sh., MetaMask), disa kriptomonedha (p.sh., ETH), dhe qasje në një platformë DeFi.</p>
                 </div>
             </div>
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-item">
                 <button class="faq-question">A është DeFi i sigurt?</button>
                 <div class="faq-answer">
                     <p>DeFi ka rreziqe si dobësitë e kodit dhe luhatjet e tregut. Hulumtoni para se të investoni.</p>
                 </div>
             </div>
-            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="faq-item">
                 <button class="faq-question">Si ndryshon DeFi nga financat tradicionale?</button>
                 <div class="faq-answer">
                     <p>DeFi është i decentralizuar dhe transparent, ndryshe nga financat tradicionale që përdorin banka.</p>
@@ -166,7 +168,7 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
