@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="sq" data-aos-easing="ease-in-out">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DeFi, Blockchain & Crypto - Hyrje</title>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos @2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css "/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header" data-aos="fade-down">
+    <h1>🎓 DeFi Learning</h1>
+    <p>Një hyrje moderne në Blockchain, Kriptovaluta dhe Financën e Pakombësuar</p>
+  </header>
+
+  <main class="swiper-container" data-aos="fade-up">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 0 -->
+      <div class="swiper-slide slide">
+        <h2>Çfarë është Blockchain?</h2>
+        <img src="assets/images/blockchain.png" alt="Blockchain" width="200">
+        <p>Blockchain është një libër transaksionesh i pakombësuar dhe transparent.</p>
+      </div>
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide slide">
+        <h2>Kriptovaluta</h2>
+        <img src="assets/images/crypto.png" alt="Crypto" width="200">
+        <p>Monedha digjitale që nuk ka banka apo qeveri qendrore.</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide slide">
+        <h2>Financa e Pakombësuar (DeFi)</h2>
+        <img src="assets/images/defi.png" alt="DeFi" width="200">
+        <p>Sisteme financiare që funksionojnë vetëm me kode – pa ndërmjetësues.</p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide slide">
+        <h2>Përparësitë</h2>
+        <ul>
+          <li>Akses global</li>
+          <li>Pa censurë</li>
+          <li>Transparenca</li>
+          <li>Kosto të ulëta</li>
+        </ul>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide slide">
+        <h2>Sfida</h2>
+        <ul>
+          <li>Rrezik sigurie</li>
+          <li>Voltalitet i lartë</li>
+          <li>Mungesë rregullimesh</li>
+          <li>Kompleksitet teknologjik</li>
+        </ul>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="swiper-slide slide">
+        <h2>Faleminderit!</h2>
+        <p>Me DeFi, jemi duke ndërtuar financën e ardhmes – transparente, globale dhe të drejtë për të gjithë.</p>
+      </div>
+
+    </div>
+
+    <!-- If needed: pagination or navigation -->
+    <div class="swiper-pagination"></div>
+  </main>
+
+  <footer class="site-footer" data-aos="fade-up">
+    <p>&copy; 2025 DeFi Learning. Të gjitha të drejtat e rezervuara.</p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js "></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos @2.3.4/dist/aos.js"></script>
+
+  <!-- Init Scripts -->
+  <script>
+    // Initialize AOS
+    AOS.init();
+
+    // Initialize Swiper
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      effect: 'slide',
+      loop: false,
+      speed: 600,
+    });
+  </script>
+</body>
+</html>
