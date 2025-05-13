@@ -1,0 +1,70 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: #eee;
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #1db984, #16a575);
+  color: white;
+}
+
+/* Swiper Container */
+.swiper-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: #1e1e1e;
+}
+
+.slide h2 {
+  margin-bottom: 1rem;
+}
+
+.slide img {
+  margin: 1rem 0;
+}
+
+.slide ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.slide li {
+  margin: 0.5rem 0;
+}
+
+/* Pagination */
+.swiper-pagination-bullet {
+  background: #1db984 !important;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #111;
+  color: #aaa;
+}
